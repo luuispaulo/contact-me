@@ -1,0 +1,157 @@
+*{ /*configuração global. Neste caso utilizado para redefinir as configurações padrão*/
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 14px;
+	text-decoration: none;
+	box-sizing: border-box;/* As propriedades de largura (width) e de altura (height) incluem o tamanho padding size e a propriedade border, mas não incluem a propriedade margin.*/
+}
+body {
+    width: 100%;
+    min-height: 100vh; /* é igual a 100% do valor da altura */
+    background-color: rgb(243, 243, 243);
+    margin: 0;
+    padding: 0;
+    display: flex; /*indica que o layout sera um flex conteiner ou seja alinha tudo em linha, fazendo com que cada elemento ocupe o espaço que ele precise*/
+    justify-content: center;/*joga todo conteudo para o centro da página*/
+}
+
+.instagram-wrapper {
+    display: flex;
+    align-items: center;/* alinhamento vertical dos ítens*/
+    justify-content: start; /* indica o espaço ou o local onde ficará cada elemento*/
+    width: 60%;
+    height: 100%;
+}
+.instagram-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;/*alinha ao centro os elementos*/
+    width: 50%; /*o elemento o ocupa 50% do espaço*/
+}
+.instagram-phone img {
+    height: 50rem;/* tamanho da imagem, que neste caso está em rem, que é igual a 16px */
+}
+
+.instagram-continue {
+    display: flex;
+    align-items: center; /* horizontal */
+    justify-content: space-around; /* vertical */
+    flex-direction: column; /* coloca os itens em coluna*/
+    width: 40%;
+    min-height: 544px;
+}
+
+.group { /*agrupa as colunas de login e logout e adiciona espaço, borda e cor as mesmas*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 20.8px 0;
+    border: 1px solid lightgray;
+}
+.group:nth-child(1) {/*nth-child se refere a classe group que você colocada em mais de uma class, sendo assim o (n) chama a class desejada*/
+    min-height: 304px;
+}
+.link-blue a{
+	color: black
+}
+.instagram-logo {
+    height: 48px;
+}
+
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden; /*a imagem não excede os limites da div. overflow = ultrapassar*/
+}
+
+.profile-photo img {
+    height: 96px;
+}
+
+.instagram-login {
+    background-color: #0095f6;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.instagram-logout {
+    color: #0095f6;
+    margin-top: 16px;
+}
+
+.not-account {
+    color: rgb(160, 160, 160);
+}
+
+.link-blue {
+    color: #0095f6;
+}
+
+.get-the-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20.8px 0;
+}
+
+.download {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 16px;
+}
+
+.app-download {
+    height: 48px;
+    width: 160px;
+    background-size: cover;
+}
+
+.app-download:nth-child(1) { /*background image para adicionar as imagens*/
+    background-image: url('./img/apple-button.png');
+}
+
+.app-download:nth-child(2) {
+    background-image: url('./img/googleplay-button.png');
+}
+
+/* media queries */
+
+
+@media (max-width: 1024px) { /* quando até tiver até 1024px, os elementos dentro de wrapper ocupe a largura de 90%*/
+    .instagram-wrapper {
+        width: 90%;
+    }
+}
+
+@media (max-width: 650px) { /*outra media quire para responsividade. A lógica é a mesma da anterior, mas com alguns comandos a mais*/
+    body {
+        background-color: #ffffff;
+    }
+
+    .instagram-wrapper {
+        width: 90%;
+    }
+
+    .instagram-phone {
+        display: none; /*neste caso em tela de até 650px o celular nao aparecerá*/
+    }
+
+    .instagram-continue {
+        width: 100%; /*aparecerá o conteiner da página de log e logout, que ocupará 100%*/
+    }
+    
+    .group {
+        border: 1px solid transparent; /*a bordas foram retiradas para mobile*/
+    }
+}
